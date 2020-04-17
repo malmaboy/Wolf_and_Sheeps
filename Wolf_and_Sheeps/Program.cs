@@ -6,11 +6,11 @@ namespace Wolf_and_Sheeps
     {
         static void Main(string[] args)
         {
-           BOARD BOARD = new BOARD();
-		   BOARD.DisplayBoard();
+            BOARD Board = new BOARD();
+            Board.DisplayBoard();
         }
 
- /*       static void Board() // Desenha o tabuleiro
+/*        static void Board() // Desenha o tabuleiro
         {
             string horizontalbar = "----------------";
             string verticalbar = "| ";

@@ -12,7 +12,7 @@ namespace Wolf_and_Sheeps
 
         public Symbols()
         {
-            symbols = new char [BOARD.dimension, BOARD.dimension];
+            symbols = new char [BOARD.Dimension, BOARD.Dimension];
             
         } 
 
