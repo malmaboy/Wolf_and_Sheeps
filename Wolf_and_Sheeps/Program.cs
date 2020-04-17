@@ -6,7 +6,8 @@ namespace Wolf_and_Sheeps
     {
         static void Main(string[] args)
         {
-            Board();
+           BOARD BOARD = new BOARD();
+		   BOARD.DisplayBoard();
         }
 
 /*        static void Board() // Desenha o tabuleiro
@@ -34,7 +35,7 @@ namespace Wolf_and_Sheeps
                     Console.WriteLine(verticalbar);
                     
             }
-        }
+        }*/
 
     }
 }
