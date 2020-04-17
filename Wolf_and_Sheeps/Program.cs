@@ -9,7 +9,7 @@ namespace Wolf_and_Sheeps
             Board();
         }
 
-        static void Board() // Desenha o tabuleiro
+/*        static void Board() // Desenha o tabuleiro
         {
             string horizontalbar = "----------------";
             string verticalbar = "| ";
