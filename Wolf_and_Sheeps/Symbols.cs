@@ -14,88 +14,60 @@ namespace Wolf_and_Sheeps
         public Symbols()
         {
             symbols = new char [BOARD.Dimension, BOARD.Dimension];
-            //InicialSymbols();
             InicialWolfs();
             InicialSheeps();
+    
         } 
 
-     /*   public void InicialSymbols()
+        public int InicialWolfs() // Desenha as peças de acordo com a escolha do jogador
         {
-            for(int l = 0;l < BOARD.Dimension;l++)
-            {
-                for(int c = 4; c < BOARD.Dimension; c++)
-                {
-                    if (l == 0 || l == 0 || l == BOARD.Dimension - 1 || l == BOARD.Dimension - 4)
-                        symbols[l,c] = X_symbol;
-                    else
-                        symbols[l,c] = Space;
-                    
-                }
+            bool check = false;
 
-                    
+            while(check == false)
+            {
+
+                do
+                {
+                    Console.WriteLine("Escolha a posição do Lobo. ");
+                    Escolha = Console.ReadLine();
+
+
+                    switch(Escolha)
+                    {
+
+                        case "1":
+                            check = true;
+                            Symbols.symbols[0,1] = X_symbol;
+                            break;
+                        case "3":
+                            check = true;
+                            Symbols.symbols[0,3] = X_symbol;;
+                            break;
+                        case "5":
+                            check = true;
+                            Symbols.symbols[0,5] = X_symbol;;
+                            break;
+                        case "7":
+                            check = true;
+                            Symbols.symbols[0,7] = X_symbol;;
+                            break;
+                        default:
+                            Console.WriteLine("Opção Invalida." );
+                            break;
+                    }
+                }while(false);
             }
-        } */
 
-        
-
-
-        public void InicialWolfs() // Desenha as peças de acordo com a escolha do jogador
-        {
-            do
-            {
-                Console.WriteLine("Escolha a posição do Lobo. ");
-                Escolha = Console.ReadLine();
-                
-
-                switch(Escolha)
-                {
-                    case "0":
-                        Console.WriteLine("1");
-                        break;
-                    case "1": 
-                        Console.WriteLine(BOARD.Dimension(X_symbol,Space));
-                        break;
-                    case "2":
-                        Console.WriteLine("1");
-                        break;
-                    case "3":   
-                        Console.WriteLine("1");
-                        break;
-                    case "4":
-                        Console.WriteLine("1");
-                        break;
-                    case "5":
-                        Console.WriteLine("1");
-                        break;
-                    case "6":
-                        Console.WriteLine("1");
-                        break;
-                    case "7":
-                        Console.WriteLine("1");
-                        break;
-                    default:
-                        Console.WriteLine("Opção Invalida, o número tem de ser 1 a 7");
-                        break;
-                }   
-            }while(false);
+            return Int32.Parse(Escolha);
         }
 
         public void InicialSheeps()
         {
-            
+            Symbols.symbols[7,0] = O_symbol;
+            Symbols.symbols[7,2] = O_symbol;
+            Symbols.symbols[7,4] = O_symbol;
+            Symbols.symbols[7,6] = O_symbol;
         }
-
-
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
 
     }
 }
