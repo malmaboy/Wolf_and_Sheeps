@@ -10,7 +10,15 @@ namespace Wolf_and_Sheeps
         public static char [,] symbols;
 		public const char O_symbol = 'O'; // Simbolo da Ovelha
 
-        private string Escolha; 
+        public int wolf_pos_c;
+
+        public int wolf_pos_l;
+
+        public int sheep_pos_c;
+
+        public int sheep_pos_l;
+
+ 
         public Symbols()
         {
             symbols = new char [BOARD.Dimension, BOARD.Dimension];
@@ -19,7 +27,7 @@ namespace Wolf_and_Sheeps
     
         } 
 
-        public int InicialWolfs() // Desenha as peças de acordo com a escolha do jogador
+        public void InicialWolfs() // Desenha as peças de acordo com a escolha do jogador
         {
             bool check = false;
 
@@ -29,25 +37,25 @@ namespace Wolf_and_Sheeps
                 do
                 {
                     Console.WriteLine("Escolha a posição do Lobo. ");
-                    Escolha = Console.ReadLine();
+                    wolf_pos_c = Int32.Parse(Console.ReadLine());
 
 
-                    switch(Escolha)
+                    switch(wolf_pos_c)
                     {
 
-                        case "1":
+                        case 1:
                             check = true;
                             Symbols.symbols[0,1] = X_symbol;
                             break;
-                        case "3":
+                        case 3:
                             check = true;
                             Symbols.symbols[0,3] = X_symbol;;
                             break;
-                        case "5":
+                        case 5:
                             check = true;
                             Symbols.symbols[0,5] = X_symbol;;
                             break;
-                        case "7":
+                        case 7:
                             check = true;
                             Symbols.symbols[0,7] = X_symbol;;
                             break;
@@ -58,7 +66,7 @@ namespace Wolf_and_Sheeps
                 }while(false);
             }
 
-            return Int32.Parse(Escolha);
+            
         }
 
         public void InicialSheeps()
