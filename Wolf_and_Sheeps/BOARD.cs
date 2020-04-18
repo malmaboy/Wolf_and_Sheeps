@@ -6,16 +6,16 @@ using System.Linq;
 
 namespace Wolf_and_Sheeps
 {
-    public class BOARD
+    public class BOARD : Symbols
     {
 		private string[,] Board;
 		public const int Dimension = 8;
 
-		private move move;
+		
 
 		public BOARD()
 		{
-			move = new move();
+			
 			Board = new string [Dimension, Dimension];
 			HorizontalSymbol = "+---";
 			VerticalSymbol = "| ";
@@ -28,8 +28,6 @@ namespace Wolf_and_Sheeps
 
     public void DisplayBoard()
     {
-      //while(!move.Exit)
-      //{
         Console.WriteLine("    0   1   2   3   4   5   6   7"); 
 
         for(int l = 0; l < Dimension; l++)
@@ -62,8 +60,18 @@ namespace Wolf_and_Sheeps
 
       Console.Write("+\n\n");
         
-      //}
-    }  
+      
+    }
+
+    public void MoveWolf()
+    {
+      
+    } 
+
+    public void MoveSheep() 
+    {
+
+    }
     
   }
 }

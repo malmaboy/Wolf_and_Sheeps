@@ -6,8 +6,15 @@ namespace Wolf_and_Sheeps
     {
         static void Main(string[] args)
         {
-            BOARD Board = new BOARD();
-            Board.DisplayBoard();
+                BOARD Board = new BOARD();
+                Board.DisplayBoard();
+                
+                while(true)
+                {
+                    Board.MoveWolf();
+                    Board.MoveSheep();
+                }
+
         }
 
     }
