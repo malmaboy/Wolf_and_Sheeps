@@ -207,9 +207,10 @@ namespace Wolf_and_Sheeps
                   {
                     Console.WriteLine("Movimento Inválido");
                   }
-                }
 
-                Symbols.symbols[sheep1_pos_l, sheep1_pos_c] = O_symbol1;
+                  
+
+                }
 
                 DisplayBoard();
               }
@@ -290,15 +291,17 @@ namespace Wolf_and_Sheeps
 
                 int c_check = sheep4_pos_c;
 
-                if (sheep4_pos_l >= 1)
-                {
-                  sheep4_pos_l-=1;
-                }
-
                 check = false;
+
+                if (sheep3_pos_l >= 1)
+                {
+                  sheep3_pos_l-=1;
+                }
 
                 while(check == false)
                 {
+                  Console.WriteLine("Linha da Ovelha");
+                  sheep4_pos_l = Int32.Parse(Console.ReadLine());
 
                   Console.WriteLine("Coluna da Ovelha");
                   sheep4_pos_c = Int32.Parse(Console.ReadLine());
