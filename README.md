@@ -34,4 +34,5 @@ Luís Gomes Nº 21901362
 
 - Bugs
 
-    - sheep4
+    - A ovelha nº 4 por vezes não se movimenta para a posição correcta.
+    - As ovelhas não reconhecem a colisão com as outras peças.
