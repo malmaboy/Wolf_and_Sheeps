@@ -16,7 +16,7 @@ namespace Wolf_and_Sheeps
 
         public BOARD()
         {
-
+            // Variaveis
             Board = new string[Dimension, Dimension];
             HorizontalSymbol = "+---";
             VerticalSymbol = "| ";
@@ -27,7 +27,7 @@ namespace Wolf_and_Sheeps
         public string VerticalSymbol { get; set; }
 
 
-        public void DisplayBoard()
+        public void DisplayBoard()  // Imprime o tabuleiro 8x8
         {
             Console.WriteLine("    0   1   2   3   4   5   6   7");
 
@@ -64,8 +64,9 @@ namespace Wolf_and_Sheeps
 
         }
 
-        public void InitialPos()
+        public void InitialPos() // Imprime as posições iniciais das ovelhas e do lobo
         {
+          // Posições das ovelhas
             sheep1_pos_l = 7;
             sheep2_pos_l = 7;
             sheep3_pos_l = 7;
@@ -81,7 +82,7 @@ namespace Wolf_and_Sheeps
             Symbols.symbols[sheep4_pos_l, sheep4_pos_c] = O_symbol4;
 
             bool check = false;
-
+            // Posição do lobo e as escolha da posição do lobo
             while (check == false)
             {
                 wolf_pos_l = 0;
@@ -120,7 +121,7 @@ namespace Wolf_and_Sheeps
 
         }
 
-            public void MoveWolf()
+            public void MoveWolf() // Movimentação do lobo
             {
 
               Symbols.symbols[wolf_pos_l, wolf_pos_c] = Space;
@@ -174,7 +175,7 @@ namespace Wolf_and_Sheeps
 
             }
 
-            public void MoveSheep()
+            public void MoveSheep() // Movimentação da ovelha
             {
               int sheep_move = 0;
 

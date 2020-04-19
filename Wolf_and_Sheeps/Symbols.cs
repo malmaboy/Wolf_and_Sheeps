@@ -3,6 +3,9 @@ using System.Linq;
 
 namespace Wolf_and_Sheeps
 {
+    /// <summary>
+    /// Variaveis utilizadas ao longo do projeto
+    /// </summary>
     public class Symbols
     {
         public const char X_symbol = 'X'; // Simbolo do Lobo
@@ -37,7 +40,7 @@ namespace Wolf_and_Sheeps
         public int sheep4_pos_l;
 
  
-        public Symbols()
+        public Symbols() // dimensões dos simbolos(peças)
         {
             symbols = new char [BOARD.Dimension, BOARD.Dimension];
 
