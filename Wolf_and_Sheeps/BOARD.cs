@@ -523,11 +523,7 @@ namespace Wolf_and_Sheeps
               return false;
             }
 
-            public bool SheepWin()
-            {
-              if (wolf_pos_l == 0)
-              return false;
-            }
+     
 
         }
     }
