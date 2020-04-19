@@ -7,8 +7,8 @@ namespace Wolf_and_Sheeps
         static void Main(string[] args)
         {
                 BOARD Board = new BOARD();
+                Board.InitialPos();
                 Board.DisplayBoard();
-                
                 while(true)
                 {
                     Board.MoveWolf();
