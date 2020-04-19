@@ -12,6 +12,8 @@ namespace Wolf_and_Sheeps
 
         public int mov_horizontal;
 
+        public bool win;
+
         public BOARD()
         {
 
@@ -152,9 +154,21 @@ namespace Wolf_and_Sheeps
                 {
                   Console.WriteLine("Movimento Inválido");
                 }
-              }
 
-              Symbols.symbols[wolf_pos_l, wolf_pos_c] = X_symbol;
+                if (PiecePositionWolf() == false & check == true)
+                {
+                  Symbols.symbols[wolf_pos_l, wolf_pos_c] = X_symbol;
+                }
+
+                else
+                {
+                  if (check == true)
+                  {
+                    Console.WriteLine("Movimento inválido");
+                    check = false;
+                  }
+                }
+              }
 
               DisplayBoard();
 
@@ -208,7 +222,20 @@ namespace Wolf_and_Sheeps
                     Console.WriteLine("Movimento Inválido");
                   }
 
-                  
+                  if (PiecePositionSheep1() == false & check == true)
+                  {
+                    Symbols.symbols[sheep1_pos_l, sheep1_pos_c] = O_symbol1;
+                  }
+
+                  else
+                  {
+                    if (check == true)
+                    {
+                      Console.WriteLine("Movimento Inválido");
+                      check = false;
+                    }
+                  }
+
 
                 }
 
@@ -245,7 +272,19 @@ namespace Wolf_and_Sheeps
                   }
                 }
 
-                Symbols.symbols[sheep2_pos_l, sheep2_pos_c] = O_symbol2;
+                if (PiecePositionSheep2() == false & check == true)
+                  {
+                    Symbols.symbols[sheep2_pos_l, sheep2_pos_c] = O_symbol2;
+                  }
+
+                  else
+                  {
+                    if (check == true)
+                    {
+                      Console.WriteLine("Movimento Inválido");
+                      check = false;
+                    }
+                  }
 
                 DisplayBoard();
               }
@@ -280,7 +319,19 @@ namespace Wolf_and_Sheeps
                   }
                 }
 
-                Symbols.symbols[sheep3_pos_l, sheep3_pos_c] = O_symbol3;
+                if (PiecePositionSheep3() == false & check == true)
+                  {
+                    Symbols.symbols[sheep3_pos_l, sheep3_pos_c] = O_symbol3;
+                  }
+
+                  else
+                  {
+                    if (check == true)
+                    {
+                      Console.WriteLine("Movimento Inválido");
+                      check = false;
+                    }
+                  }
 
                 DisplayBoard();
               }
@@ -300,8 +351,6 @@ namespace Wolf_and_Sheeps
 
                 while(check == false)
                 {
-                  Console.WriteLine("Linha da Ovelha");
-                  sheep4_pos_l = Int32.Parse(Console.ReadLine());
 
                   Console.WriteLine("Coluna da Ovelha");
                   sheep4_pos_c = Int32.Parse(Console.ReadLine());
@@ -317,12 +366,167 @@ namespace Wolf_and_Sheeps
                   }
                 }
 
-                Symbols.symbols[sheep4_pos_l, sheep4_pos_c] = O_symbol4;
+                if (PiecePositionSheep4() == false & check == true)
+                  {
+                    Symbols.symbols[sheep4_pos_l, sheep4_pos_c] = O_symbol4;
+                  }
+
+                  else
+                  {
+                    if (check == true)
+                    {
+                      Console.WriteLine("Movimento Inválido");
+                      check = false;
+                    }
+                  }
 
                 DisplayBoard();
 
               } 
       
+            }
+
+            public bool PiecePositionWolf()
+            {
+              
+              if (wolf_pos_l == sheep1_pos_l & wolf_pos_c == sheep1_pos_c)
+              {
+                return true;
+              }
+                
+              if (wolf_pos_l == sheep2_pos_l & wolf_pos_c == sheep2_pos_c)
+              {
+                return true;
+              }
+                
+              if (wolf_pos_l == sheep3_pos_l & wolf_pos_c == sheep3_pos_c)
+              {
+                return true;
+              }
+                
+              if (wolf_pos_l == sheep4_pos_l & wolf_pos_c == sheep4_pos_c)
+              {
+                return true;
+              }
+                
+              return false;
+              
+            }
+
+            public bool PiecePositionSheep1()
+            {
+              if (wolf_pos_l == sheep1_pos_l & wolf_pos_c == sheep1_pos_c)
+              {
+                return true;
+              }
+                
+              if (sheep1_pos_l == sheep2_pos_l & sheep1_pos_c == sheep2_pos_c)
+              {
+                return true;
+              }
+                
+              if (sheep1_pos_l == sheep3_pos_l & sheep1_pos_c == sheep3_pos_c)
+              {
+                return true;
+              }
+                
+              if (sheep1_pos_l == sheep4_pos_l & sheep1_pos_c == sheep4_pos_c)
+              {
+                return true;
+              }
+                
+              return false;
+            }
+
+            public bool PiecePositionSheep2()
+            {
+              if (wolf_pos_l == sheep2_pos_l & wolf_pos_c == sheep2_pos_c)
+              {
+                return true;
+              }
+                
+              if (sheep1_pos_l == sheep2_pos_l & sheep1_pos_c == sheep2_pos_c)
+              {
+                return true;
+              }
+                
+              if (sheep2_pos_l == sheep3_pos_l & sheep2_pos_c == sheep3_pos_c)
+              {
+                return true;
+              }
+                
+              if (sheep2_pos_l == sheep4_pos_l & sheep2_pos_c == sheep4_pos_c)
+              {
+                return true;
+              }
+                
+              return false;
+            }
+
+            public bool PiecePositionSheep3()
+            {
+              if (wolf_pos_l == sheep3_pos_l & wolf_pos_c == sheep3_pos_c)
+              {
+                return true;
+              }
+                
+              if (sheep1_pos_l == sheep3_pos_l & sheep1_pos_c == sheep3_pos_c)
+              {
+                return true;
+              }
+                
+              if (sheep2_pos_l == sheep3_pos_l & sheep2_pos_c == sheep3_pos_c)
+              {
+                return true;
+              }
+                
+              if (sheep3_pos_l == sheep4_pos_l & sheep3_pos_c == sheep4_pos_c)
+              {
+                return true;
+              }
+                
+              return false;
+            }
+
+            public bool PiecePositionSheep4()
+            {
+              if (wolf_pos_l == sheep4_pos_l & wolf_pos_c == sheep4_pos_c)
+              {
+                return true;
+              }
+                
+              if (sheep1_pos_l == sheep4_pos_l & sheep1_pos_c == sheep4_pos_c)
+              {
+                return true;
+              }
+                
+              if (sheep4_pos_l == sheep3_pos_l & sheep4_pos_c == sheep3_pos_c)
+              {
+                return true;
+              }
+                
+              if (sheep2_pos_l == sheep4_pos_l & sheep2_pos_c == sheep4_pos_c)
+              {
+                return true;
+              }
+                
+              return false;
+            }
+
+            public bool WolfWin()
+            {
+              if (wolf_pos_l == 7)
+              {
+                return true;
+              }
+
+              return false;
+            }
+
+            public bool SheepWin()
+            {
+              if (wolf_pos_l == 0)
+              return false;
             }
 
         }

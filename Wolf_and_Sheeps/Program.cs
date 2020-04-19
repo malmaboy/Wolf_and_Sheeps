@@ -12,6 +12,11 @@ namespace Wolf_and_Sheeps
                 while(true)
                 {
                     Board.MoveWolf();
+                    if (Board.WolfWin() == true)
+                    {
+                        Console.WriteLine("O Lobo ganha!");
+                        break;
+                    }
                     Board.MoveSheep();
                 }
 
