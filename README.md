@@ -14,8 +14,6 @@ Luís Gomes Nº 21901362
 - Luis Gomes 
   - Movimentação das peças
   - Verificação de vitoria
-
-- [Link para o repositório](https://github.com/malmaboy/Wolf_and_Sheeps)
   
 
 #### Arquitetura da solução
